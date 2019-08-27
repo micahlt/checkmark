@@ -116,8 +116,15 @@ h2 {
 <script src="script.js"></script>
 
 <script>
-
 document.addEventListener('DOMContentLoaded', function() {
+  if (! localStorage.noFirstVisit) {
+    var toastHTML = '<span style = "text-align: center;">Welcome to Checkmark!</span>';
+    M.toast({html: toastHTML}, {displayLength: 10})
+    var toastHTML = '<span style = "text-align: center;">Click the question mark at the bottom for info.</span>';
+    M.toast({html: toastHTML}, {displayLength: 10})
+    localStorage.noFirstVisit = "1";
+}
+
     var elems = document.querySelectorAll('.fixed-action-btn');
     var instances = M.FloatingActionButton.init(elems, {
       direction: 'left',

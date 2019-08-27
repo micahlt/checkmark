@@ -5,6 +5,7 @@
 <title>Checkmark</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <style>
 /* Center the loader */
 #loader {
@@ -101,14 +102,33 @@ h2 {
   <input id="task" style = "width: 80%" placeholder="enter a task">
   <button id="add" class="btn-floating btn-large waves-effect waves-light teal"><i class="material-icons">add</i></button>
 <div id="todos"></div>
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large teal">
+    <i class="large material-icons">help</i>
+  </a>
+  <ul>
+    <li><a href = "about.html" class="btn-floating teal"><i class="material-icons">info</i></a></li>
+    <li><a href = "https://micahlt.github.io/" class="btn-floating teal"><i class="material-icons">face</i></a></li>
+    <li><a href = "https://github.com/micahlt/checkmark" class="btn-floating teal"><i class="material-icons">code</i></a></li>
+  </ul>
+</div>
 </div>
 <script src="script.js"></script>
 
 <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      direction: 'left',
+      hoverEnabled: false
+    });
+  });
+        
 var myVar;
 
 function myFunction() {
-  myVar = setTimeout(showPage, 2000);
+  myVar = setTimeout(showPage, 1000);
 }
 
 function showPage() {

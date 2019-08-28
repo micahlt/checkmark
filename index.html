@@ -6,8 +6,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 <style>
 /* Center the loader */
 #loader {
@@ -113,36 +111,6 @@ h2 {
   </ul>
 </div>
     </div>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-auth.js"></script>
- 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#config-web-app -->
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyBF74pPjq9q3rjSLYjAiIJQXHnsJ10yqQ4",
-    authDomain: "checkmark-micahlt.firebaseapp.com",
-    databaseURL: "https://checkmark-micahlt.firebaseio.com",
-    projectId: "checkmark-micahlt",
-    storageBucket: "",
-    messagingSenderId: "1067183875314",
-    appId: "1:1067183875314:web:5f7aecc6a7d74955"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-    ui.start('#firebaseui-auth-container', {
-  signInOptions: [
-    // List of OAuth providers supported.
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-  ],
-  // Other config options...
-});
-    // Initialize the FirebaseUI Widget using Firebase.
-var ui = new firebaseui.auth.AuthUI(firebase.auth());
-</script>
 <script src = "script.js"><script>
 document.addEventListener('DOMContentLoaded', function() {
   if (! localStorage.noFirstVisit) {
@@ -159,31 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
       hoverEnabled: false
     });
   });
-        var uiConfig = {
-  callbacks: {
-    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-      // User successfully signed in.
-      // Return type determines whether we continue the redirect automatically
-      // or whether we leave that to developer to handle.
-      return true;
-    },
-    uiShown: function() {
-        
-    }
-  },
-  // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-  signInFlow: 'popup',
-  signInSuccessUrl: '<url-to-redirect-to-on-success>',
-  signInOptions: [
-    // Leave the lines as is for the providers you want to offer your users.
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-  ],
-  // Terms of service url.
-  tosUrl: '<your-tos-url>',
-  // Privacy policy url.
-  privacyPolicyUrl: '<your-privacy-policy-url>'
-};
-ui.start('#firebaseui-auth-container', uiConfig);
 var myVar;
 
 function myFunction() {
